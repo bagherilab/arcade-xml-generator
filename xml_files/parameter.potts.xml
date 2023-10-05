@@ -1,0 +1,81 @@
+<parameters>
+    <!-- default parameters for potts -->
+    <potts id="TEMPERATURE" value="10" description="Boltzmann temperature" />
+    <potts id="MCS" value="1" description="number of MCS steps per simulation tick" />
+    
+    <!-- adhesion term parameters -->
+    <potts.term term="adhesion" id="ADHESION" value="50" />
+    <potts.term term="adhesion" id="ADHESION_DEFAULT" value="50" />
+    <potts.term term="adhesion" id="ADHESION_NUCLEUS" value="50" />
+    
+    <!-- volume term parameters -->
+    <potts.term term="volume" id="LAMBDA" value="1" />
+    <potts.term term="volume" id="LAMBDA_DEFAULT" value="1" />
+    <potts.term term="volume" id="LAMBDA_NUCLEUS" value="1" />
+    
+    <!-- surface term parameters -->
+    <potts.term term="surface" id="LAMBDA" value="0.02" />
+    <potts.term term="surface" id="LAMBDA_DEFAULT" value="0.02" />
+    <potts.term term="surface" id="LAMBDA_NUCLEUS" value="0.02" />
+    
+    <!-- height term parameters -->
+    <potts.term term="height" id="LAMBDA" value="1" />
+    <potts.term term="height" id="LAMBDA_DEFAULT" value="1" />
+    <potts.term term="height" id="LAMBDA_NUCLEUS" value="1" />
+    
+    <!-- height term parameters -->
+    <potts.term term="junction" id="LAMBDA" value="10" />
+    
+    <!-- substrate term parameters -->
+    <potts.term term="substrate" id="HEIGHT_THRESHOLD" value="9" units="um" conversion="DS^-1" />
+    <potts.term term="substrate" id="ADHESION" value="5" />
+    
+    <!-- persistence term parameters -->
+    <potts.term term="persistence" id="LAMBDA" value="0.01" conversion="DS^-2" />
+    <potts.term term="persistence" id="VOLUME_THRESHOLD" value="5200" units="um^3" conversion="DS^-3" />
+    <potts.term term="persistence" id="LAMBDA_DEFAULT" value="0.01" conversion="DS^-2" />
+    <potts.term term="persistence" id="LAMBDA_NUCLEUS" value="0.01" conversion="DS^-2" />
+    <potts.term term="persistence" id="DECAY" value="0.05" units="/hour" conversion="DT" />
+    
+    <!-- default parameters for populations -->
+    <population id="CRITICAL_VOLUME_MEAN" value="1300" units="um^3" conversion="DS^-3" />
+    <population id="CRITICAL_VOLUME_STDEV" value="200" units="um^3" conversion="DS^-3" />
+    <population id="CRITICAL_HEIGHT_MEAN" value="9" units="um" conversion="DS^-1" />
+    <population id="CRITICAL_HEIGHT_STDEV" value="2" units="um" conversion="DS^-1" />
+    
+    <!-- default region parameters -->
+    <population id="CRITICAL_VOLUME_MEAN_DEFAULT" value="1300" units="um^3" conversion="DS^-3" />
+    <population id="CRITICAL_VOLUME_STDEV_DEFAULT" value="200" units="um^3" conversion="DS^-3" />
+    <population id="CRITICAL_HEIGHT_MEAN_DEFAULT" value="9" units="um" conversion="DS^-1" />
+    <population id="CRITICAL_HEIGHT_STDEV_DEFAULT" value="2" units="um" conversion="DS^-1" />
+    
+    <!-- nucleus region parameters -->
+    <population id="CRITICAL_VOLUME_MEAN_NUCLEUS" value="400" units="um^3" conversion="DS^-3" />
+    <population id="CRITICAL_VOLUME_STDEV_NUCLEUS" value="50" units="um^3" conversion="DS^-3" />
+    <population id="CRITICAL_HEIGHT_MEAN_NUCLEUS" value="6.5" units="um" conversion="DS^-1" />
+    <population id="CRITICAL_HEIGHT_STDEV_NUCLEUS" value="1.5" units="um" conversion="DS^-1" />
+    
+    <!-- proliferation module parameters -->
+    <population.module module="proliferation" id="RATE_G1" value="8.33" units="steps/hour" conversion="DT" description="rate of events in proliferative G1 phase" />
+    <population.module module="proliferation" id="RATE_S" value="4.35" units="steps/hour" conversion="DT" description="rate of events in proliferative S phase" />
+    <population.module module="proliferation" id="RATE_G2" value="0.752" units="steps/hour" conversion="DT" description="rate of events in proliferative G2 phase" />
+    <population.module module="proliferation" id="RATE_M" value="28" units="steps/hour" conversion="DT" description="rate of events in proliferative M phase" />
+    <population.module module="proliferation" id="STEPS_G1" value="17" units="steps" description="characteristic steps in proliferative G1 phase" />
+    <population.module module="proliferation" id="STEPS_S" value="43" units="steps" description="characteristic steps in proliferative S phase" />
+    <population.module module="proliferation" id="STEPS_G2" value="3" units="steps" description="characteristic steps in proliferative G2 phase" />
+    <population.module module="proliferation" id="STEPS_M" value="14" units="steps" description="characteristic steps in proliferative M phase" />
+    <population.module module="proliferation" id="CELL_GROWTH_RATE" value="80" units="um^3/hour" conversion="DS^-3.DT" description="basal rate of cell growth" />
+    <population.module module="proliferation" id="BASAL_APOPTOSIS_RATE" value="0.00127128" units="hours^-1" conversion="DT" description="basal rate of apoptosis" />
+    <population.module module="proliferation" id="NUCLEUS_GROWTH_RATE" value="30" units="um^3/hour" conversion="DS^-3.DT" description="basal rate of nucleus growth" />
+    <population.module module="proliferation" id="NUCLEUS_CONDENSATION_FRACTION" value="0.5" description="fraction of nuclear volume when condensed" />
+    
+    <!-- apoptosis module parameters -->
+    <population.module module="apoptosis" id="RATE_EARLY" value="4" units="steps/hour" conversion="DT" description="rate of events in early apoptosis phase" />
+    <population.module module="apoptosis" id="RATE_LATE" value="1.8" units="steps/hour" conversion="DT" description="rate of events in late apoptosis phase" />
+    <population.module module="apoptosis" id="STEPS_EARLY" value="12" units="steps" description="characteristic steps in early apoptosis phase" />
+    <population.module module="apoptosis" id="STEPS_LATE" value="10" units="steps" description="characteristic steps in late apoptosis phase" />
+    <population.module module="apoptosis" id="WATER_LOSS_RATE" value="300" units="um^3/hour" conversion="DS^-3.DT" description="basal rate of cytoplasmic water loss" />
+    <population.module module="apoptosis" id="CYTOPLASMIC_BLEBBING_RATE" value="175" units="um^3/hour" conversion="DS^-3.DT" description="basal rate of cytoplasmic blebbing" />
+    <population.module module="apoptosis" id="NUCLEUS_PYKNOSIS_RATE" value="100" units="um^3/hour" conversion="DS^-3.DT" description="basal rate of nuclear pyknosis" />
+    <population.module module="apoptosis" id="NUCLEUS_FRAGMENTATION_RATE" value="75" units="um^3/hour" conversion="DS^-3.DT" description="basal rate of nuclear fragmentation" />
+</parameters>
